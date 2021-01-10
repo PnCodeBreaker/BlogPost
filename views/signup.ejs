@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="signup.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title></title>
+</head>
+<body>
+	<div class="overlay">
+		<div class="card"><center>
+			<h2><span>LOGO</span></h2><br><br>
+		<form action="/signup">
+		<table width="100%">
+	    <!---------Error message---->
+	    <tr>
+			<td><div class="icon"><i class="material-icons">person</i></div></td>
+			<td><input type="text" name="name" placeholder="Full name"></td>
+			<div class="name error"></div>
+		</tr>
+		<tr>
+			<td><div class="icon"><i class="material-icons">mail_outline</i></div></td>
+			<td><input type="email" name="email" placeholder="Email"></td>
+			<div class="email error"></div>
+		</tr>
+		<tr>
+    	<td><div class="icon"><i class="material-icons">lock_outline</i></div></td>
+			<td><input type="password" name="password" placeholder="Password"></td>
+			<div class="password error"></div>
+            </tr>
+            <tr>
+		     <td colspan="2"><button class="signup">Signup</button></td>
+		 </tr>
+		 <tr>
+		     <td colspan="2"><center>If you already have an account</center></td>
+		 </tr>
+		 <tr>
+		     <td colspan="2"><a href="/login"><div class="signup">Login</div></a></td>
+		 </tr>
+		</table>
+        </form>
+	 </center>
+         <br><br>
+
+          <center><font color="#00bfa5">By continuing you indicate that you are agree and have read our <a href="#">terms and conditions</a> and <a href="#">Privacy policy...</a><br><br></font>
+
+            <font color="white">   ©Copyright BlogPost 2021
+
+          </center></font>
+      </div></div>
+</body>
+</html>
+<script>
+	const form = document.querySelector('form');
+	const nameError = document.querySelector('.name.error');
+	const emailError = document.querySelector('.email.error');
+	const passwordError = document.querySelector('.password.error');
+	form.addEventListener('submit', async (e) => {
+	  e.preventDefault();
+	  // reset errors
+	  nameError.textContent = '';
+	  emailError.textContent = '';
+	  passwordError.textContent = '';
+	  // get values
+	  const name = form.name.value;
+	  const email = form.email.value;
+	  const password = form.password.value;
+	  try {
+		const res = await fetch('/signup', { 
+		  method: 'POST', 
+		  body: JSON.stringify({ name,email, password}),
+		  headers: {'Content-Type': 'application/json'}
+		});
+		const data = await res.json();
+		console.log(data);
+		if (data.errors) {
+		  nameError.textContent = data.errors.name;		
+		  emailError.textContent = data.errors.email;
+		  passwordError.textContent = data.errors.password;
+		}
+		if (data.user) {
+		  location.assign(`/createblog/${data.user}`);
+		}
+	  }
+	  catch (err) {
+		console.log(err);
+	  }
+	});
+  </script>

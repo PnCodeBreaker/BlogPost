@@ -1,0 +1,136 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Ubuntu', sans-serif;
+}		
+
+ body {
+ 	 
+ 	 background-size: cover;
+ 	 background-position: center;
+ 	 height: 100vh;
+
+ }
+
+ span {
+	  background: linear-gradient(to right, #00bfa5, white, #00bfa5);
+	  -webkit-text-fill-color: transparent;
+	  -webkit-background-clip: text;
+
+}
+
+.overlay {
+	  background: black;
+	  height: 100vh;
+	  width: 100%;
+	  opacity: 0.8;
+}
+
+.overlay .card {
+	   background: none;
+	   width: 90%;
+	   height: 200px;
+	   top: 50%;
+	   left: 50%;
+	   position: relative;
+	   transform: translate(-50%,-130%);
+	   color: white;
+	  
+	  
+}
+
+.icon {
+	    height: 40px;
+	    width: 40px;
+	    background: none;
+	    border-radius: 50%;
+	    color: #00bfa5;
+	    outline: none;
+	    opacity: 1.0;
+	    border: 2px solid none;
+	    text-align: center;
+	    line-height: 45px;
+}
+
+input[type="email"] {
+	    height: 40px;
+	    width: 100%;
+	    background: none;
+	    border-style: none;
+	    border: 2px solid #00bfa5;
+	    color: white;
+	    outline: none;
+	    border-radius: 50px;
+	    font-size: 15px;
+}
+
+input[type="text"] {
+	    height: 40px;
+	    width: 100%;
+	    background: none;
+	    border-style: none;
+	    border: 2px solid #00bfa5;
+	    color: white;
+	    outline: none;
+	    border-radius: 50px;
+	    font-size: 15px;
+}
+
+input[type="password"] {
+	    height: 40px;
+	    width: 100%;
+	    background: none;
+	    border-style: none;
+	    border: 2px solid #00bfa5;
+	    color: white;
+	    outline: none;
+	    border-radius: 50px;
+	    font-size: 15px;
+}
+
+input[type="submit"] {
+	    height: 40px;
+	    width: 101%;
+	    background: #00bfa5;
+	    border-radius: 50px;
+	    color: white;
+	    outline: none;
+	    opacity: 1.0;
+	    border: none;
+	    font-size: 15px;
+}
+
+
+.signup {
+	    height: 40px;
+	    width: 101%;
+	    background: #00bfa5;
+	    border-radius: 50px;
+	    color: white;
+	    outline: none;
+	    opacity: 1.0;
+	    border: none;
+	    text-align: center;
+	    line-height: 40px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+table td{
+	  padding: 8px;
+	}
+
+
+
+@media only screen and (min-width: 600px) {
+
+    table {
+    	 width: 50%;
+    }
+
+
+
+}

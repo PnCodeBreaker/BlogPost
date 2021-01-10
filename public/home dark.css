@@ -1,0 +1,304 @@
+ *{
+          padding: 0;
+          margin: 0;
+          font-family: 'Ubuntu', sans-serif;
+          background: #121212;
+
+    }
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: #121212;
+        display: flex;
+        justify-content: space-around;
+        z-index: 999;
+    }
+
+    .footer a {
+        text-decoration: none;
+        font-size: 30px;
+        z-index: 99;
+    }
+
+    .float-btn {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        background: #121212;
+        border-radius: 50%;
+        bottom: 65px;
+        right: 10px;
+        text-align: center;
+        line-height: 60px;
+        color: #00bfa5;
+        z-index: 9;
+    }
+
+    .float-btn a {
+         text-decoration: none;
+         color: #00bfa5;
+    }
+    
+    .section.container {
+        position: relative;
+        width: 100%;
+        background: white;
+        height: auto;
+        top: 50px;
+    }
+
+    @media only screen and (min-width: 680px) {
+          .section .container .card{
+             width: 80%;
+             display: flex;
+             height: auto;
+             transition: 0.5s;
+          }
+
+        .container .card .card-content1 {
+        padding-left: 10px;
+        padding-right: 80px;
+    }
+
+    .resheader {
+          position: fixed;
+          height: 60px;
+          width: 60px;
+          right: 0;
+          background: white;
+          top: 200px;
+          z-index: -999;
+    }
+    .resheader1 {
+          position: fixed;
+          height: 60px;
+          width: 60px;
+          right: 0;
+          background: white;
+          top: 260px;
+          z-index: -999;
+    }
+    .resheader2 {
+          position: fixed;
+          height: 60px;
+          width: 60px;
+          right: 0;
+          background: white;
+          top: 320px;
+          z-index: -999;
+    }
+    .resheader3 {
+          position: fixed;
+          height: 60px;
+          width: 60px;
+          right: 0;
+          background: white;
+          top: 380px;
+          z-index: -999;
+    }
+     .footer {
+          display: none;
+
+
+     }
+
+
+
+
+     .vsec {
+         height: 100vh;
+         position: relative;
+         left: 0;
+         width: 100%;
+         top: 0;
+     }
+
+     .vsec .overlay {
+         height: 100vh;
+         position: absolute;
+         background: black;
+         z-index: 9999999;
+         opacity: 0.9;
+         left: 0;
+         width: 100%;
+         top: 0;
+         font-size: 6rem;
+     }
+   
+
+      .parallax {
+       background-image: url('overlay.jpg');
+       height: 100%; 
+       background-attachment: fixed;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       z-index: 99999;
+}
+      .float-btn {
+      z-index: -999;
+      background: #121212;
+      }
+
+      .scr-btn {
+      height: 60px;
+      line-height: 60px;
+      border-radius: 50px;
+      width: 200px;
+      background: #00bfa5;
+      border-radius: 50px;
+      color: white;
+      outline: none;
+      opacity: 1.0;
+      border: none;
+      font-size: 15px;
+      }
+
+     a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .logout-btn {
+      height: 40px;
+      line-height: 40px;
+      border-radius: 50px;
+      width: 100px;
+      border: 2px solid #00bfa5;
+      border-radius: 50px;
+      color: #00bfa5;
+      position: absolute;
+      text-align: center;
+      right: 5px;
+      top: 5px;
+      outline: none;
+      font-size: 15px;
+      }
+     
+      .logout-btn a {
+        text-decoration: none;
+        color: #00bfa5;
+      }
+
+    }
+
+
+    .section.container .card {
+        height: auto;
+        width: 100%;
+        position: relative;
+        background: white;
+        left: 0;
+        transition: 0.5s;
+      
+    }
+
+    .container .card .card-content1 {
+        padding-left: 10px;
+        transition: 0.5s;
+    }
+     .container .card .card-content2 {
+        padding-left: 10px;
+    }
+
+   
+
+    .container .card .card-content i {
+        padding-left: 5px;
+        
+
+    }
+
+    .container .card .card-content2 a {
+        text-decoration: none;
+        color: red;
+
+    }
+
+    .header {
+         width: 100%;
+         height: 50px;
+         position: fixed;
+         top: 0;
+         left: 0;
+         background: #121212;
+         z-index: 99999;
+         color: white;
+         line-height: 50px;
+         display: flex;
+         justify-content: space-between;
+         box-shadow: 0 1px 1px 0 grey;
+    }
+
+
+     @media only screen and (min-width: 680px) {
+         .header {
+           display: none;
+         }
+     }
+
+    .header .logout {
+         line-height: 60px;
+         padding-right: 10px;
+
+    }
+
+    .header .logo {
+         padding-left: 10px;
+    }
+
+
+  input[type="text"] {
+      height: 40px;
+      width: 90%;
+      background: none;
+      border-style: none;
+      border-bottom: 2px solid #00bfa5;
+      color: #00bfa5;
+      outline: none;
+      font-size: 15px;
+}
+
+.txt {
+        background: none;
+      border-style: none;
+      border: 2px solid #00bfa5;
+      color: #00bfa5;
+      outline: none;
+      font-size: 15px;
+}
+
+input[type="submit"] {
+      height: 40px;
+      width: 90%;
+      background: #00bfa5;
+      border-radius: 50px;
+      color: white;
+      outline: none;
+      opacity: 1.0;
+      border: none;
+      font-size: 15px;
+
+}
+
+.delete {
+      height: 40px;
+      width: 90%;
+      background: #00bfa5;
+      border-radius: 50px;
+      color: white;
+      outline: none;
+      opacity: 1.0;
+      border: none;
+      font-size: 15px;
+      line-height: 40px;
+}

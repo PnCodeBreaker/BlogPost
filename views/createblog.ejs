@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/home.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title></title>
+</head>
+<body bgcolor="white">
+  <div class="header">
+    <div class="logo"><h3>Create post</h3></div>
+    <a href="/logout"> <div class="head-btn">Logout</div></a>
+  </div>
+<div class="footer">
+  <a href="/"><font color="grey"><i class="material-icons">home</i></font></a>
+  <a href="#"><font color="grey"><i class="material-icons">person</i></font></a>
+   <a href="#"><font color="grey"><i class="material-icons">brightness_4</i></font></a>
+  <a href="#"><font color="grey"><i class="material-icons">error</i></font></a>
+</div>
+
+  
+<br><br><br><br>
+
+
+<div class="container">
+<center>
+ <form action="/postblog" method="POST" enctype="multipart/form-data">
+                 <input type="hidden" name="id" value="<%=user._id%>" readonly required>
+                 <input type="text" name="topic" placeholder="Topic" minlength="3" maxlength="100" required><br>
+                 <input type="text" name="snippet" placeholder="Short description" minlength="15" maxlength="200" required><br><br>
+                 <textarea class="txt" name="content" placeholder="full description...." rows="10" cols="38" minlength="20" maxlength="1000" required></textarea><br><br>
+                 <input type="file" name="blogimage" accept="image/png, image/jpeg, image/jpg"><br><br>
+                     <input type="submit" value="submit">
+                
+
+            </form>
+
+<br><br>
+<h3>My posts </h3></center>
+<hr color="#00bfa5" size="1"><br>
+
+
+
+
+
+
+
+
+
+
+  <% if(userblogs.length > 0) { %>
+    <% userblogs.forEach(userblog => { %>         
+  <div class="card">
+    <div class="card-content1">
+   <font color="#00bfa5"> <b><%=userblog.user.name%></b><br>
+   </div>
+    <img src=<%=userblog.blogimage%> height="300px" width="100%">
+    <div class="card-content2">
+   <font color="red"><a href="/deleteblog/<%=userblog._id%>"><i class="material-icons">delete</i></a></font>
+   <a href="/editblog/<%=userblog._id%>"><i class="material-icons">edit</i></a>
+   <br> <b>33265 likes | <%=userblog.createdAt%> <br></b></font><br><hr color="#00bfa5" size="1">
+   <p><b><%=userblog.topic%></b></p> <br><p><%=userblog.snippet%><a href="/blog-content/<%=userblog._id%>">Read more</a></p>
+   <br><br>
+ </div>
+</div>
+  <br><br>
+  <% }) %>
+  <% } else { %>
+    <p>There are no blogs to display...</p>
+    <% } %>
+
+</div>
+
+
+<br><br><br><br><br>
+
+</body>
+</html>

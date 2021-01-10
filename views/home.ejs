@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="home.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title></title>
+</head>
+<body bgcolor="white">
+  <div class="header">
+    <div class="logo"><h3>All blogs</h3></div>
+    <% if(user) { %>
+    <a href="/logout"> <div class="head-btn">Logout</div></a>
+  </div>
+<div class="footer">
+  <a href="/"><font color="#00bfa5"><i class="material-icons">home</i></font></a>
+  
+  <a href="/createblog/<%=user._id%>"><font color="grey"><i class="material-icons">person</i></font></a>
+   <a href="#"><font color="grey"><i class="material-icons">brightness_4</i></font></a>
+  <a href="#"><font color="grey"><i class="material-icons">error</i></font></a>
+</div>
+
+  <div class="float-btn"><a href="/createblog/<%=user._id%>"><i class="material-icons">edit</i></a></div>
+<br><br><br><br>
+<% } else { %>
+    <a href="/login"> <div class="head-btn">Login</div></a>
+    </div>
+    <div class="footer">
+      <a href="/"><font color="#00bfa5"><i class="material-icons">home</i></font></a>  
+    <a href="/login"><font color="grey"><i class="material-icons">person</i></font></a>
+     <a href="#"><font color="grey"><i class="material-icons">brightness_4</i></font></a>
+    <a href="#"><font color="grey"><i class="material-icons">error</i></font></a>
+  </div>
+  
+    <div class="float-btn"><a href="/login"><i class="material-icons">edit</i></a></div>
+  <br><br><br><br>
+  <% } %>
+
+<% if(blogs.length > 0) { %>
+  <% blogs.forEach(blog => { %>
+<div class="container">
+  <div class="card">
+    <div class="card-content1">
+   <font color="#00bfa5"> <b><%=blog.user.name%></b><br>
+   </div>
+    <img src=<%=blog.blogimage%> height="300px" width="100%">
+    <div class="card-content2">
+   <i class="material-icons">favorite</i>
+   <br> <b>33265 likes | <%=blog.createdAt%> <br></b></font><br><hr color="#00bfa5" size="1">
+   <b><%=blog.topic%></b> 
+   <br> 
+   <%=blog.snippet%>  <a href="/blog-content/<%=blog._id%>">Read more</a>
+   <br><br>
+ </div>
+  </div>
+  <br><br>
+  <% }) %>
+  <% } else { %>
+    <p>There are no blogs to display...</p>
+    <% } %>
+
+
+<br><br><br><br><br>
+
+</body>
+</html>

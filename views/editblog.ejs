@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/home.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title></title>
+</head>
+<body bgcolor="white">
+  <div class="header">
+    <div class="logo"><h3>Edit post</h3></div>
+    <a href="/logout"> <div class="head-btn">Logout</div></a>
+  </div>
+<div class="footer">
+  <a href="/"><font color="grey"><i class="material-icons">home</i></font></a>
+  <a href="/createblog/<%=user._id%>"><font color="grey"><i class="material-icons">person</i></font></a>
+   <a href="#"><font color="grey"><i class="material-icons">brightness_4</i></font></a>
+  <a href="#"><font color="grey"><i class="material-icons">error</i></font></a>
+</div>
+
+  
+<br><br><br><br>
+
+
+<div class="container">
+<center>
+  <form action="/editblog" method="POST">
+    <input type="hidden" name="id" value="<%=blog._id%>" readonly required>
+    <input type="text" name="topic" placeholder="Topic" minlength="3" maxlength="100" value="<%=blog.topic%>" required><br>
+    <input type="text" name="snippet" placeholder="Short description" minlength="15" maxlength="200" value="<%=blog.snippet%>" required><br><br>
+    <textarea class="txt" name="content" placeholder="full description...." rows="10" cols="38" minlength="20" maxlength="1000" required><%=blog.content%></textarea><br><br><br>
+        <input type="submit" value="Edit Blog">
+</form>
+</body>
+</html>
+<script>
+  const form = document.querySelector('form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const id = form.id.value;
+    const topic = form.topic.value;
+    const snippet = form.snippet.value;
+    const content = form.content.value;
+    try {
+		const res = await fetch('/editblog', { 
+		  method: 'POST', 
+		  body: JSON.stringify({ id,topic,snippet, content}),
+		  headers: {'Content-Type': 'application/json'}
+    });
+    const data = await res.json();
+    if(data.blogid)
+    {
+      location.assign(`/blog-content/${data.blogid}`);
+    }
+    if(data.errors)
+    {
+      alert('could not update error occurred');
+    }
+  }
+    catch (err) {
+		console.log(err);
+	  }
+  })
+</script>
