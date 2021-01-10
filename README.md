@@ -1,2 +1,2 @@
 # BlogPost
-A Simple Blogging Web Application Project using NodeJs
+A repo of Blogging Web Application Project using NodeJs
