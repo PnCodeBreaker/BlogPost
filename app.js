@@ -2,20 +2,21 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser')
 const Blog = require('./models/Blog');
-const upload = require('./middleware/upload');
 const User = require('./models/User');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 const { response } = require('express');
 const { findById } = require('./models/Blog');
 require('dotenv').config();
 const app = express();
-
+const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 // middleware
 app.use(express.static('public'));
 app.use('/uploads',express.static('uploads'));
 app.use(express.json());
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
 // view engine
 app.set('view engine', 'ejs');
 
@@ -57,16 +58,22 @@ app.get('/deleteblog/:id',requireAuth,(req,res)=>{
       res.status(400).send(err);
     })
 });
-app.post('/postblog',requireAuth,upload.single('blogimage'),(req,res)=>{
+app.post('/postblog',requireAuth,(req,res)=>{
   let blog = new Blog({
     topic: req.body.topic,
     snippet: req.body.snippet,
     content: req.body.content,
     user: req.body.id
   })
-  if(req.file)
+  if(req.body.blogimage)
   {
-    blog.blogimage = req.file.path;
+    const blogImageData = JSON.parse(req.body.blogimage);
+    if(blogImageData != null && imageMimeTypes.includes(blogImageData.type))
+    {
+      blog.blogimage = new Buffer.from(blogImageData.data,'base64');
+      blog.blogimageType = blogImageData.type;
+    }
+    
   }
     blog.save()
     .then(response => {

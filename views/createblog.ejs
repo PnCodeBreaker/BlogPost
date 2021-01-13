@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+  <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+  <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+  <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+  <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+  <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
+  <script defer src="/Javascripts/fileUpload.js"></script>
   <title></title>
 </head>
 <body bgcolor="white">
@@ -25,15 +32,13 @@
 
 <div class="container">
 <center>
- <form action="/postblog" method="POST" enctype="multipart/form-data">
+ <form action="/postblog" method="POST">
                  <input type="hidden" name="id" value="<%=user._id%>" readonly required>
                  <input type="text" name="topic" placeholder="Topic" minlength="3" maxlength="100" required><br>
                  <input type="text" name="snippet" placeholder="Short description" minlength="15" maxlength="200" required><br><br>
                  <textarea class="txt" name="content" placeholder="full description...." rows="10" cols="38" minlength="20" maxlength="1000" required></textarea><br><br>
-                 <input type="file" name="blogimage" accept="image/png, image/jpeg, image/jpg"><br><br>
+                 <input type="file" name="blogimage" class="filepond"><br><br>
                      <input type="submit" value="submit">
-                
-
             </form>
 
 <br><br>
@@ -55,7 +60,7 @@
     <div class="card-content1">
    <font color="#00bfa5"> <b><%=userblog.user.name%></b><br>
    </div>
-    <img src=<%=userblog.blogimage%> height="300px" width="100%">
+    <img src=<%=userblog.blogimagePath%> height="300px" width="100%">
     <div class="card-content2">
    <font color="red"><a href="/deleteblog/<%=userblog._id%>"><i class="material-icons">delete</i></a></font>
    <a href="/editblog/<%=userblog._id%>"><i class="material-icons">edit</i></a>

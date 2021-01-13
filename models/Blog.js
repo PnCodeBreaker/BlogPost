@@ -12,13 +12,20 @@ const blogSchema = new mongoose.Schema({
       type: String,
       required:true
    },
-   blogimage: String,
+   blogimage: Buffer,
+   blogimageType: String,
    user:{
       required:true,
       type: mongoose.Schema.Types.ObjectId,
       ref:'user'
    }
 },{ timestamps: true });
+
+blogSchema.virtual('blogimagePath').get(function() {
+   if (this.blogimage != null && this.blogimageType != null) {
+     return `data:${this.blogimageType};charset=utf-8;base64,${this.blogimage.toString('base64')}`
+   }
+ })
 
 const Blog = mongoose.model('blog',blogSchema);
 
