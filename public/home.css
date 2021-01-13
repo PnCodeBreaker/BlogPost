@@ -117,6 +117,7 @@ html {
 
 .txt {
         background: none;
+        width: 90%;
       border-style: none;
       border: 2px solid #00bfa5;
       color: #00bfa5;
@@ -152,21 +153,20 @@ input[type="submit"] {
 
 
 .header .head-btn {
-      height: 30px;
+      height: 40px;
       line-height: 30px;
-      width: auto;
+      width: 30px;
       padding-right: 6px;
       padding-left: 6px;
       background: none;
-      border-radius: 20px;
+      border-radius: 50%;
       color: white;
       outline: none;
       opacity: 1.0;
-      border: 1px solid white;
-      font-size: 15px;
+      font-size: 18px;
       position: fixed;
       top: 10px;
-      right: 30px;
+      right: 25px;
       text-align: center;
 }
 
@@ -190,13 +190,19 @@ input[type="submit"] {
 .dropdown-content {
   display: none;
   position: fixed;
+  top: 50px;
   right: 10px;
   color: #00bfa5;
   background-color: white;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  height: 50px;
+  height: auto;
   z-index: 1;
+}
+
+.dropdown-content a{
+  text-decoration: none;
+  color: #00bfa5;
 }
 
 .dropdown:hover .dropdown-content {
@@ -225,7 +231,7 @@ input[type="submit"] {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
-  padding-top: 200px;
+  padding-top: 2px;
   border: 1px solid #888;
   width: 80%;
 }
@@ -233,27 +239,36 @@ input[type="submit"] {
 
 .close {
    height: 40px;
-      width: 100px;
+      width: auto;
       background: white;
       border-radius: 50px;
       color: #00bfa5;
+      padding: 10px;
       outline: none;
       opacity: 1.0;
       border: 1px solid #00bfa5;
       font-size: 15px;
       line-height: 40px;
 }
+.modal .modal-content a {
+      text-decoration: none;
+}
 
-
+span {
+      color: tomato;
+}
 .mod {
        height: 40px;
       width: auto;
-      background: white;
+      background: #00bfa5;
+      padding: 10px;
       border: none;
-      color: #00bfa5;
+      color: white;
+      border-radius: 50px;
       outline: none;
       font-size: 15px;
       line-height: 40px;
+      cursor: pointer;
 }
 
 
@@ -302,7 +317,19 @@ input[type="submit"] {
       outline: none;
       font-size: 15px;
 }
+  .txt {
+       width: 40vw;
+  }
 
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  padding-top: 2px;
+  border: 1px solid #888;
+  width: 40%;
+}
 
 
 }

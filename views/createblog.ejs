@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="home.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -17,11 +17,21 @@
 <body bgcolor="white">
   <div class="header">
     <div class="logo"><h3>Create post</h3></div>
-    <a href="/logout"> <div class="head-btn">Logout</div></a>
+   <div class="dropdown">
+  <div class="head-btn"><i class="material-icons">account_circle</i></div>
+  <div class="dropdown-content">
+  <a href="/logout">Logout</a> <br>
+  <div id="myBtn">Delete Account</div>
   </div>
+</div>
+
+
+  
+  </div>
+
 <div class="footer">
   <a href="/"><font color="grey"><i class="material-icons">home</i></font></a>
-  <a href="#"><font color="grey"><i class="material-icons">person</i></font></a>
+  <a href="#"><font color="#00bfa5"><i class="material-icons">person</i></font></a>
    <a href="#"><font color="grey"><i class="material-icons">brightness_4</i></font></a>
   <a href="#"><font color="grey"><i class="material-icons">error</i></font></a>
 </div>
@@ -79,6 +89,55 @@
 
 
 <br><br><br><br><br>
+
+<!----- BACKEND WORKS FOR DELETE ACCOUNT TO BE DONE HERE ------->
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <br><br><br><br>
+    <center>Do you really want to delete your account permanently?
+      <br><br><br><br><br>
+   <span class="close">No, Cancel</span><span> </span> <a href="#"><span class="mod">Yes, Delete</span></a>
+    </center>
+  </div>
+
+
+
+
+</div>
+<br><br><br>
+<font color="grey">
+<center>Powered by <br>
+         PRI<span>DE</span>LANCE</center>
+<br><br><br>
+</font>
+
+
+<script>
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0]; 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+
+
+
+
+
+
 
 </body>
 </html>
