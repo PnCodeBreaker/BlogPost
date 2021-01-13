@@ -17,7 +17,17 @@
 <div class="footer">
   <a href="/"><font color="grey"><i class="material-icons">home</i></font></a>
   <a href="/createblog/<%=user._id%>"><font color="grey"><i class="material-icons">person</i></font></a>
-   <a href="#"><font color="grey"><i class="material-icons">brightness_4</i></font></a>
+  <a href="#"><font color="grey">
+     <div class="theme-switch-wrapper">
+       <label class="theme-switch" for="checkbox">
+    <input type="checkbox" id="checkbox" />
+    <div class="slider round"></div>
+  </label>
+  </div>
+
+
+
+   </i></font></a>
   <a href="#"><font color="grey"><i class="material-icons">error</i></font></a>
 </div>
 
@@ -59,6 +69,30 @@
 
     <!-------LOADER-------->
 
+ <script>
+  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+}
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+    else {        document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+    }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+</script>
 
 
 </body>
