@@ -92,6 +92,7 @@ body {
     .container .card .card-content1 {
         padding-left: 10px;
         transition: 0.5s;
+        color: var(--font2-color);
     }
      .container .card .card-content2 {
         padding-left: 10px;
@@ -247,7 +248,7 @@ input[type="submit"] {
   border-radius: 5px;
   right: 10px;
   color: #00bfa5;
-  background-color: white;
+  background-color: color: var(--primary-color);;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   height: auto;
