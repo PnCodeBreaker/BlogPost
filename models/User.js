@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Blog = require('./Blog');
 const { isEmail, isAlphanumeric,isAlpha } = require('validator'); 
 const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
@@ -32,6 +33,18 @@ userSchema.pre('save',async function(next){
     this.password = await bcrypt.hash(this.password,salt);
     next();
 })
+userSchema.pre('deleteOne', function (next) {
+    const userId = this.getQuery()["_id"];
+    mongoose.model("blog").deleteMany({'user': userId}, function (err, result) {
+      if (err) {
+        console.log(`[error] ${err}`);
+        next(err);
+      } else {
+        console.log('success');
+        next();
+      }
+    });
+  });
 // static method to login User
 userSchema.statics.login = async function (email,password){
     const user = await this.findOne({email});

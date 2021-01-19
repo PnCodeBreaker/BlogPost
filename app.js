@@ -58,6 +58,22 @@ app.get('/deleteblog/:id',requireAuth,(req,res)=>{
       res.status(400).send(err);
     })
 });
+app.get('/deleteuser/:id',requireAuth,async (req,res)=>{
+    const id = req.params.id;
+    try {
+      const deleted = await User.deleteOne({_id: id});
+    } catch(e) {
+      console.error(`[error] ${e}`);
+      throw Error('Error occurred while deleting Person');
+    }
+    User.findByIdAndDelete(id)
+    .then(result=>{
+      res.redirect('/');
+    })
+    .catch(err=>{
+      res.status(400).send(err);
+    });
+});
 app.post('/postblog',requireAuth,(req,res)=>{
   let blog = new Blog({
     topic: req.body.topic,
