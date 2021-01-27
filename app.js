@@ -149,7 +149,7 @@ app.post('/like',requireAuth,(req,res)=>{
       return res.status(422).json({error:err})
     }
     else{
-      res.redirect('/');
+      res.redirect(`/blog-content/${req.body.blogId}`);
     }
   })
 })
@@ -163,7 +163,7 @@ app.post('/unlike',requireAuth,(req,res)=>{
       return res.status(422).json({error:err})
     }
     else{
-      res.redirect('/');
+      res.redirect(`/blog-content/${req.body.blogId}`);
     }
   })
 })

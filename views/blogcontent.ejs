@@ -65,15 +65,45 @@
    <h2><%=blog.topic%></h2><br><br>
    <b><%=blog.user.name%></b><br>
    <font color="grey"><%=blog.createdAt%></font><br>
-   <font color="#00bfa5"><i class="material-icons">favorite</i>
-   <br> <b>33265 likes</b><br></font><br><hr color="#00bfa5" size="1">
+   <%  if(user) {
+    if(blog.likes.includes(user._id)) { 
+    %>   
+    <form action="/unlike" method="POST">
+      <input type="hidden" name="blogId" value="<%=blog._id%>" readonly required>
+      <input type="hidden" name="userId" value="<%=user._id%>" readonly required>
+      <button type="submit"><i class="material-icons">favorite</i></button></form>
+   <% } else { %>
+    <form action="/like" method="POST">
+      <input type="hidden" name="blogId" value="<%=blog._id%>" readonly required>
+      <input type="hidden" name="userId" value="<%=user._id%>" readonly required>
+      <button type="submit"><i class="material-icons">favorite_border</i></button></form>
+    <% } } else { %>
+      <a href="/login"><i class="material-icons">favorite_border</i></form></a>
+      <% } %>
+   <br> <b><%=blog.likes.length%> likes</b><br></font><br><hr color="#00bfa5" size="1">
  </div>
 <img src=<%=blog.blogimagePath%> height="300px" width="100%"><br><br>
    <div class="card-content2">
    <p><b><%=blog.snippet%></b></p>
    <br><p><%=blog.content%></p>
 <br><br>
-  <font size="15px" color="#00bfa5"><i class="material-icons">favorite</i></font>   </div>
+<%  if(user) {
+  if(blog.likes.includes(user._id)) { 
+  %>   
+  <form action="/unlike" method="POST">
+    <input type="hidden" name="blogId" value="<%=blog._id%>" readonly required>
+    <input type="hidden" name="userId" value="<%=user._id%>" readonly required>
+    <button type="submit"><font size="15px" color="#00bfa5"><i class="material-icons">favorite</i></font></button></form>
+ <% } else { %>
+  <form action="/like" method="POST">
+    <input type="hidden" name="blogId" value="<%=blog._id%>" readonly required>
+    <input type="hidden" name="userId" value="<%=user._id%>" readonly required>
+    <button type="submit"><font size="15px" color="#00bfa5"><i class="material-icons">favorite_border</i></font></button></form>
+  <% } } else { %>
+    <a href="/login"><i class="material-icons">favorite_border</i></form></a>
+    <% } %>
+    <br> <b><%=blog.likes.length%> likes</b><br></font><br><hr color="#00bfa5" size="1">
+  </div>
   </div>
   </div>
 <br><br>

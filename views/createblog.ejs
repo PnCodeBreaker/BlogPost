@@ -87,7 +87,7 @@
     <div class="card-content2">
    <font color="red"><a href="/deleteblog/<%=userblog._id%>"><i class="material-icons">delete</i></a></font>
    <a href="/editblog/<%=userblog._id%>"><i class="material-icons">edit</i></a>
-   <br> <b>33265 likes | <%=userblog.createdAt%> <br></b></font><br><hr color="#00bfa5" size="1">
+   <br> <b><%=userblog.likes.length%> likes | <%=userblog.createdAt%> <br></b></font><br><hr color="#00bfa5" size="1">
    <p><b><%=userblog.topic%></b></p> <br><p><%=userblog.snippet%><a href="/blog-content/<%=userblog._id%>">Read more</a></p>
    <br><br>
  </div>
