@@ -14,6 +14,7 @@ const blogSchema = new mongoose.Schema({
    },
    blogimage: Buffer,
    blogimageType: String,
+   likes:[{type:mongoose.Schema.Types.ObjectId,ref:'user'}],
    user:{
       required:true,
       type: mongoose.Schema.Types.ObjectId,

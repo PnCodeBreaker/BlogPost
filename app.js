@@ -138,5 +138,34 @@ app.post('/editblog',requireAuth,(req,res)=>{
     })
     .catch(err => res.status(400).json( {errors: err} ));
 })
+
+app.post('/like',requireAuth,(req,res)=>{
+  Blog.findByIdAndUpdate(req.body.blogId,{
+    $push:{likes:req.body.userId}
+  },{
+    new:true
+  }).exec((err,result)=>{
+    if(err){
+      return res.status(422).json({error:err})
+    }
+    else{
+      res.redirect('/');
+    }
+  })
+})
+app.post('/unlike',requireAuth,(req,res)=>{
+  Blog.findByIdAndUpdate(req.body.blogId,{
+    $pull:{likes:req.body.userId}
+  },{
+    new:true
+  }).exec((err,result)=>{
+    if(err){
+      return res.status(422).json({error:err})
+    }
+    else{
+      res.redirect('/');
+    }
+  })
+})
 // authentication routes
 app.use(authRoutes);
