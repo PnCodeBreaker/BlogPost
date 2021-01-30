@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
   .then((result) => app.listen(process.env.PORT || 3000))
   .catch((err) => console.log(err));
 
-// routes
+// blog routes
 app.get('*',checkUser);
 app.get('/',(req, res) =>  {
   Blog.find().sort({ createdAt: -1 }).populate("user").exec((err,blogs) => {
