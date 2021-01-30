@@ -553,3 +553,12 @@ input:checked + .slider:before {
   }
 /******* LOADER END    ******/
 
+
+
+
+
+button {
+     background: none;
+     border: none;
+     outline: none;
+}
