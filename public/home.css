@@ -76,6 +76,7 @@ body {
         background: white;
         height: auto;
         top: 50px;
+        display: block;
     }
 
 
@@ -306,6 +307,11 @@ input[type="submit"] {
   color: var(--font2-color);
 }
 
+
+#img_selector {
+   background: var(--primary-color);
+  color: var(--font2-color);
+}
 
 .close {
    height: 40px;
