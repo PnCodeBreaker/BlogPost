@@ -71,14 +71,14 @@
     <form action="/unlike" method="POST">
       <input type="hidden" name="blogId" value="<%=blog._id%>" readonly required>
       <input type="hidden" name="userId" value="<%=user._id%>" readonly required>
-      <button type="submit"><i class="material-icons">favorite</i></button></form>
+      <button class="favorite" type="submit"><i class="material-icons">favorite</i></button></form>
    <% } else { %>
     <form action="/like" method="POST">
       <input type="hidden" name="blogId" value="<%=blog._id%>" readonly required>
       <input type="hidden" name="userId" value="<%=user._id%>" readonly required>
-      <button type="submit"><i class="material-icons">favorite_border</i></button></form>
+      <button class="favorite" type="submit"><i class="material-icons">favorite_border</i></button></form>
     <% } } else { %>
-      <a href="/login"><i class="material-icons">favorite_border</i></form></a>
+      <a class="favorite" href="/login"><i class="material-icons">favorite_border</i></form></a>
       <% } %>
    <br> <b><%=blog.likes.length%> likes</b><br></font><br><hr color="#00bfa5" size="1">
  </div>
@@ -120,24 +120,7 @@
 <br><br><br><br><br>
 
 <!----- LOADER ------>
-    <div class="loader-wrapper">
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-    </div>
-
-    <script>
-        $(window).on("load",function(){
-          $(".loader-wrapper").fadeOut("slow");
-        });
-    </script>
+    
 
     <!-------LOADER-------->
 

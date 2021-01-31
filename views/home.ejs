@@ -19,6 +19,10 @@
     <div class="logo"><h3>All blogs</h3></div>
     <% if(user) { %>
     <a href="/logout"> <div class="head-btn">Logout</div></a>
+
+
+
+
   </div>
 <div class="footer">
   <a href="/"><font color="#00bfa5"><i class="material-icons">home</i></font></a>
@@ -54,7 +58,7 @@
   </label>
   </div>
 
-
+  
 
    </i></font></a>
     <a href="#"><font color="grey"><i class="material-icons">error</i></font></a>
@@ -63,16 +67,17 @@
     <div class="float-btn"><a href="/login"><i class="material-icons">edit</i></a></div>
   <br><br><br><br>
   <% } %>
-
+  
 <% if(blogs.length > 0) { %>
   <% blogs.forEach(blog => { %>
+    <div class= "section">
 <div class="container">
   <div class="card">
     <div class="card-content1">
    <font color="#00bfa5"> <b><%=blog.user.name%></b><br>
    </div>
 
-   <img src="/public/load.gif" class="lazy" data-src=<%=blog.blogimagePath%> width="100%" height="300">
+   <img src="loader.gif" class="lazy" data-src=<%=blog.blogimagePath%> width="100%" height="300">
 
     <div class="card-content2">
    <br> <b><%=blog.likes.length%> likes  | <%=blog.createdAt%> <br></b></font><br><hr color="#00bfa5" size="1">
@@ -82,14 +87,20 @@
    <br><br>
  </div>
   </div>
-  <br><br>
+  </div>
+</div>
+
+
+
   <% }) %>
+  
   <% } else { %>
     <p>There are no blogs to display...</p>
     <% } %>
 
+    <center><button class="loadmore">Load more</button></center>
 
-<br><br><br><br><br>
+<br><br><br><br>
 
 
 <script>
@@ -121,24 +132,7 @@ toggleSwitch.addEventListener('change', switchTheme, false);
 
 
 <!----- LOADER ------>
-    <div class="loader-wrapper">
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-    </div>
-
-    <script>
-        $(window).on("load",function(){
-          $(".loader-wrapper").fadeOut("slow");
-        });
-    </script>
+   
 
     <!-------LOADER-------->
 
@@ -222,6 +216,28 @@ toggleSwitch.addEventListener('change', switchTheme, false);
 
 
  <!-------------------------->
-   
+ 
+
+
+  <script>
+    	$(".section").slice(0,2).show();
+	$(".loadmore").on("click", function(){
+		$(".section:hidden").slice(0,2).show();
+
+		if($(".section:hidden").length ==0){
+			$(".loadmore").fadeOut();
+		}
+	});
+  </script>
+
+       
+
+
+
+
+
+
+
+
 </body>
 </html>

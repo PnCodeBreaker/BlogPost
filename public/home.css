@@ -75,10 +75,13 @@ body {
         width: 100%;
         background: white;
         height: auto;
-        top: 50px;
+        top: 40px;
         
     }
-
+      .section {
+       display: none;
+    
+}
 
     .section.container .card {
         height: auto;
@@ -308,7 +311,7 @@ input[type="submit"] {
 }
 
 
-#img_selector {
+input[type="file"] {
    background: var(--primary-color);
   color: var(--font2-color);
 }
@@ -370,7 +373,6 @@ span {
       }
     
 
-
 input[type="submit"] {
       height: 40px;
       width: 20vw;
@@ -420,10 +422,7 @@ input[type="submit"] {
   display: flex;
   align-items: center;
   
-  em {
-    margin-left: 10px;
-    font-size: 1rem;
-  }
+ 
 }
 .theme-switch {
   display: inline-block;
@@ -567,4 +566,30 @@ button {
      background: none;
      border: none;
      outline: none;
+}
+
+
+.favorite {
+    background: none;
+    color: teal;
+}
+
+a {
+   color:teal;
+   text-decoration: none;
+}
+
+
+.loadmore {
+     background-color: teal;
+     width: 100px;
+     height: 40px;
+     line-height: 40px;
+     text-align: center;
+     color: white;
+     border-radius: 20px;
+     display: block;
+     position: relative;
+     ;
+    
 }
