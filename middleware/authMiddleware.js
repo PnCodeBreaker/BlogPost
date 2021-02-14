@@ -1,19 +1,18 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+require('dotenv').config();
 
 const requireAuth = (req,res,next) => {
 
     const token = req.cookies.jwt;
-
     // check if jwt token exist and is verified 
     if(token){
-        jwt.verify(token, 'pncodeBreaker21 Batman DC ', (err,decodedToken)=>{
+        jwt.verify(token, process.env.AUTH_JWT, (err,decodedToken)=>{
             if(err){
                 console.log(err.message);
                 res.redirect('/login');
             }
             else {
-                console.log(decodedToken);
                 next();
             }
         })
@@ -28,14 +27,13 @@ const checkUser = (req,res,next) => {
     const token = req.cookies.jwt;
 
     if (token) {
-        jwt.verify(token, 'pncodeBreaker21 Batman DC ', async (err,decodedToken)=>{
+        jwt.verify(token, process.env.AUTH_JWT, async (err,decodedToken)=>{
             if(err){
                 console.log(err.message);
                 res.locals.user = null;
                 next();
             }
             else {
-                console.log(decodedToken);
                 let user = await User.findById(decodedToken.id);
                 res.locals.user = user;
                 next();

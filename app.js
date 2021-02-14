@@ -16,7 +16,7 @@ app.use(express.static('public'));
 app.use('/uploads',express.static('uploads'));
 app.use(express.json());
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
+app.use(bodyParser.urlencoded({ limit: '5mb', extended: false }));
 // view engine
 app.set('view engine', 'ejs');
 
