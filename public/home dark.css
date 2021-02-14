@@ -9,7 +9,15 @@
 html {
   scroll-behavior: smooth;
 }
+a {
+	text-decoration: none;
+	color: white;
+}
 
+u {
+	text-decoration: underline;
+	text-decoration-color: #c21e27;
+}
 
     .footer {
         position: fixed;
