@@ -33,7 +33,7 @@ const handleErrors = (err) => {
 }
 
 // creating JWT tokens
-const maxAge = 3 * 24 * 60 * 60;
+const maxAge = 7 * 24 * 60 * 60;
 const createToken = (id) => {
   return jwt.sign({id}, process.env.AUTH_JWT,{
     expiresIn: maxAge
