@@ -76,9 +76,9 @@
     <div class="card-content1">
    <font color="#00bfa5"> <b><%=blog.user.name%></b><br>
    </div>
-
+   <% if(blog.blogimagePath) { %>
    <img loading="lazy" alt="blogimage" src=<%=blog.blogimagePath%> width="100%" height="300">
-
+    <% } %>
     <div class="card-content2">
    <br> <b><%=blog.likes.length%> likes  | <%=blog.createdAt%> <br></b></font><br><hr color="#00bfa5" size="1">
    <b><%=blog.topic%></b> 

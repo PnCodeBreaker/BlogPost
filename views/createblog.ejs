@@ -83,7 +83,9 @@
     <div class="card-content1">
    <font color="#00bfa5"> <b><%=userblog.user.name%></b><br>
    </div>
+   <% if(userblog.blogimagePath) { %>
     <img src=<%=userblog.blogimagePath%> height="300px" width="100%">
+    <% } %>
     <div class="card-content2">
    <font color="red"><a href="/deleteblog/<%=userblog._id%>"><i class="material-icons">delete</i></a></font>
    <a href="/editblog/<%=userblog._id%>"><i class="material-icons">edit</i></a>
