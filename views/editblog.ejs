@@ -42,7 +42,7 @@
     <input type="hidden" name="id" value="<%=blog._id%>" readonly required>
     <input type="text" name="topic" placeholder="Topic" minlength="3" maxlength="100" value="<%=blog.topic%>" required><br>
     <input type="text" name="snippet" placeholder="Short description" minlength="15" maxlength="200" value="<%=blog.snippet%>" required><br><br>
-    <textarea class="txt" name="content" placeholder="full description...." rows="10" cols="38" minlength="20" maxlength="5000" required><%=blog.content%></textarea><br><br><br>
+    <textarea class="txt" name="content" placeholder="full description...." rows="10" cols="38" minlength="20" maxlength="10000" required><%=blog.content%></textarea><br><br><br>
         <input type="submit" value="Edit Blog">
 </form>
 
