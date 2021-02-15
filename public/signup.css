@@ -98,6 +98,7 @@ input[type="submit"] {
 	    opacity: 1.0;
 	    border: none;
 	    font-size: 15px;
+		cursor: pointer;
 }
 
 
@@ -112,6 +113,8 @@ input[type="submit"] {
 	    border: none;
 	    text-align: center;
 	    line-height: 40px;
+		cursor: pointer;
+		font-size: 15px;
 }
 
 a {

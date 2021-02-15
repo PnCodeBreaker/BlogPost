@@ -179,6 +179,7 @@ input[type="submit"] {
       opacity: 1.0;
       border: none;
       font-size: 15px;
+      cursor: pointer;
 
 }
 
@@ -391,6 +392,7 @@ input[type="submit"] {
       opacity: 1.0;
       border: none;
       font-size: 15px;
+      cursor: pointer;
 
 }
 
@@ -574,22 +576,24 @@ button {
      background: none;
      border: none;
      outline: none;
+     cursor: pointer;
 }
 
 
 .favorite {
     background: none;
-    color: teal;
+    color: #00bfa5;
+    Cursor: pointer;
 }
 
 a {
-   color:teal;
+   color: #00bfa5;
    text-decoration: none;
 }
 
 
 .loadmore {
-     background-color: teal;
+     background-color: #00bfa5;
      width: 100px;
      height: 40px;
      line-height: 40px;
@@ -598,6 +602,5 @@ a {
      border-radius: 20px;
      display: block;
      position: relative;
-     ;
-    
+     cursor:pointer;
 }
