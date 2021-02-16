@@ -87,7 +87,7 @@
 <% } %>
    <div class="card-content2">
    <p><b><%=blog.snippet%></b></p>
-   <br><p><%=blog.content%></p>
+   <br><div style="white-space: pre-line;"><%=blog.content%></div>
 <br><br>
 <%  if(user) {
   if(blog.likes.includes(user._id)) { 
