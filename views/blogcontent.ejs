@@ -3,11 +3,11 @@
 <head>
   <link rel="stylesheet" href="/home.css">
   <link rel="icon" href="favicon.png" type="image/x-icon"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="jquery-2.1.4.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+  <script defer src="/Javascripts/darkmode.js"></script>
   <title>Welcome to Blogpost</title>
 </head>
 <body bgcolor="white">
@@ -87,7 +87,7 @@
 <% } %>
    <div class="card-content2">
    <p><b><%=blog.snippet%></b></p>
-   <br><div style="white-space: pre-line;"><%=blog.content%></div>
+   <br><div style="white-space: pre-line;"><%-blog.content%></div>
 <br><br>
 <%  if(user) {
   if(blog.likes.includes(user._id)) { 
@@ -114,48 +114,6 @@
   <a href="https://github.com/PnCodeBreaker"><u>PNCodeBreaker</u></a><font color="tomato"> & </font><a href="https://github.com/Decoder6125"><u>Decoder</u></a></center>
 <br><br>
 </font>
-
- 
-
-
-
-
-
-
-
-
 <br><br>
-
-<!----- LOADER ------>
-    
-
-    <!-------LOADER-------->
-
-    <script>
-  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-const currentTheme = localStorage.getItem('theme');
-
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-  
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-    }
-}
-
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-    else {        document.documentElement.setAttribute('data-theme', 'light');
-          localStorage.setItem('theme', 'light');
-    }    
-}
-
-toggleSwitch.addEventListener('change', switchTheme, false);
-</script>
-
-
 </body>
 </html>

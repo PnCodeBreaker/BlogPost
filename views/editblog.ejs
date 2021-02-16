@@ -4,7 +4,6 @@
   <link rel="stylesheet" href="/home.css">
   <link rel="icon" href="favicon.png" type="image/x-icon"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="jquery-2.1.4.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -40,9 +39,9 @@
 <center>
   <form action="/editblog" method="POST">
     <input type="hidden" name="id" value="<%=blog._id%>" readonly required>
-    <input type="text" name="topic" placeholder="Topic" minlength="3" maxlength="100" value="<%=blog.topic%>" required><br>
-    <input type="text" name="snippet" placeholder="Short description" minlength="15" maxlength="200" value="<%=blog.snippet%>" required><br><br>
-    <textarea class="txt" name="content" placeholder="full description...." rows="10" cols="38" minlength="20" maxlength="10000" required><%=blog.content%></textarea><br><br><br>
+    <input style="font-weight: 900;" type="text" name="topic" placeholder="Topic" minlength="3" maxlength="100" value="<%=blog.topic%>" required><br>
+    <input style="font-weight: 900;" type="text" name="snippet" placeholder="Short description" minlength="15" maxlength="200" value="<%=blog.snippet%>" required><br><br>
+    <textarea style="font-weight: 900;" class="txt" name="content" placeholder="full description...." rows="10" cols="38" minlength="20" maxlength="10000" required><%=blog.content%></textarea><br><br><br>
         <input type="submit" value="Edit Blog">
 </form>
 

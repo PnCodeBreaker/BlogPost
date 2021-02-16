@@ -4,7 +4,6 @@
   <link rel="stylesheet" href="/home.css">
   <link rel="icon" href="favicon.png" type="image/x-icon"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="jquery-2.1.4.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -60,7 +59,8 @@
                  <input type="hidden" name="id" value="<%=user._id%>" readonly required>
                  <input style="font-weight: 900;" type="text" name="topic" placeholder="Topic" minlength="3" maxlength="100" required><br>
                  <input style="font-weight: 900;" type="text" name="snippet" placeholder="Short description" minlength="15" maxlength="200" required><br><br>
-                 <textarea class="txt" style="font-weight: 900;" name="content" placeholder="Full description...." rows="10" cols="38" minlength="20" maxlength="10000" required></textarea><br><br>
+                 <textarea class="txt" style="font-weight: 900;" name="content" placeholder="Full description.... &#10;&#10;Note:- You can Use Html markup tags to style and add hyperlinks and images to your blogs which will be displayed as output. For Eg:- &#10;&#10;1) Use <b> example text </b> for bold &#10;&#10;2) Use <i> sample text </i> for italics &#10;&#10;3) Use <img src=' '/> for inserting images &#10;&#10;4) Use <a href='sample link'> </a> etc etc." 
+                 rows="10" cols="38" minlength="20" maxlength="10000" required></textarea><br><br>
                  <input type="file" name="blogimage" class="filepond"><br><br>
                      <input type="submit" value="submit">
             </form>
