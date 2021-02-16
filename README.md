@@ -4,7 +4,7 @@
 <h2> Live Website :- </h2> https://blogpost21.herokuapp.com/
 <br>
 <h2> Screenshots : - </h2> 
-<img src="https://user-images.githubusercontent.com/41236287/108111112-45127e80-70ba-11eb-9bcf-7cb7b0ea23bb.jpg" alt="BlogPost Screenshot" width="auto" height="400px"> <br> 
+<img src="https://user-images.githubusercontent.com/41236287/108111112-45127e80-70ba-11eb-9bcf-7cb7b0ea23bb.jpg" alt="BlogPost Screenshot" width="auto" height="auto"> <br> 
 <img src="https://user-images.githubusercontent.com/41236287/108111474-b94d2200-70ba-11eb-87fd-e073a4a5cb5f.jpg" alt="BlogPost Mobile View SS" width="auto" align="center" height="350px">
 <br>
 <br>
