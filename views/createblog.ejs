@@ -58,9 +58,9 @@
 <center>
  <form action="/postblog" method="POST">
                  <input type="hidden" name="id" value="<%=user._id%>" readonly required>
-                 <input type="text" name="topic" placeholder="Topic" minlength="3" maxlength="100" required><br>
-                 <input type="text" name="snippet" placeholder="Short description" minlength="15" maxlength="200" required><br><br>
-                 <textarea class="txt" name="content" placeholder="full description...." rows="10" cols="38" minlength="20" maxlength="10000" required></textarea><br><br>
+                 <input style="font-weight: 900;" type="text" name="topic" placeholder="Topic" minlength="3" maxlength="100" required><br>
+                 <input style="font-weight: 900;" type="text" name="snippet" placeholder="Short description" minlength="15" maxlength="200" required><br><br>
+                 <textarea class="txt" style="font-weight: 900;" name="content" placeholder="Full description...." rows="10" cols="38" minlength="20" maxlength="10000" required></textarea><br><br>
                  <input type="file" name="blogimage" class="filepond"><br><br>
                      <input type="submit" value="submit">
             </form>
