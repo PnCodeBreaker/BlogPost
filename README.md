@@ -5,7 +5,7 @@
 <br>
 <h2> Screenshots : - </h2> 
 <img src="https://user-images.githubusercontent.com/41236287/108111112-45127e80-70ba-11eb-9bcf-7cb7b0ea23bb.jpg" alt="BlogPost Screenshot" width="auto" height="auto"> <br> 
-<img src="https://s2.gifyu.com/images/videogif17697b4ca682543e6.gif" alt="Animated Gif" width="auto" height="auto">                           
+<img src="https://s2.gifyu.com/images/videogif17697b4ca682543e6.gif" alt="Animated Gif">                           
 <br>
 <br>
 <h2> Features and Tech used in BlogPost:- </h2>
