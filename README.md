@@ -5,8 +5,7 @@
 <br>
 <h2> Screenshots : - </h2> 
 <img src="https://user-images.githubusercontent.com/41236287/108111112-45127e80-70ba-11eb-9bcf-7cb7b0ea23bb.jpg" alt="BlogPost Screenshot" width="auto" height="auto"> <br> 
-<video width="auto" height="auto autoplay muted> <source src="https://user-images.githubusercontent.com/41236287/108169971-7c674680-711f-11eb-8613-d7fd95a51af1.mp4" type="video/mp4"> 
-</video>                            
+<img src="https://s2.gifyu.com/images/videogif17697b4ca682543e6.gif" alt="Animated Gif" width="auto" height="auto">                           
 <br>
 <br>
 <h2> Features and Tech used in BlogPost:- </h2>
