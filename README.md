@@ -17,10 +17,11 @@
 Feel Free to make pull requests to Improve/Add new features.
 The Code is not properly refactored as of now.
 <h4> To Run The Web App on your local machine </h4>
+
 ```bash
-   $ Git Clone the above repo
+   $ git clone the above repo
    $ cd to the directory and npm install ( node.js must be installed )
-   $ Set up the ENV file to connect to MongoDB and JWT Auth Token
+   Set up the ENV file to connect to MongoDB and JWT Auth Token
    $ npm start/nodemon/node.js 
 ```
 <h2> Screenshots : - </h2> 
